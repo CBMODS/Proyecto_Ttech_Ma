@@ -1,7 +1,7 @@
 # Proyecto Angular + Tailwind CSS
 
 <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="90" height="90" /> 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Tailwind_CSS_Logo.svg" width="50" height="50" />
+<img src="https://logowik.com/content/uploads/images/tailwind-css3232.logowik.com.webp" width="50" height="50" />
 
 Este es un proyecto de ejemplo que utiliza **Angular 18** como framework de desarrollo y **Tailwind CSS** como herramienta de diseño. Este proyecto demuestra cómo integrar ambos en un entorno de desarrollo moderno y eficiente.
 
