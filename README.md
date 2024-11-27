@@ -22,7 +22,7 @@ Este es un proyecto de ejemplo que utiliza **Angular 18** como framework de desa
 
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-- [Node.js](https://nodejs.org/) (v14 o superior)
+- [Node.js](https://nodejs.org/) (v22 o superior)
 - [Angular CLI](https://angular.io/cli)
 - [NPM](https://www.npmjs.com/)
 
