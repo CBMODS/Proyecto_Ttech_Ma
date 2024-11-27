@@ -1,0 +1,53 @@
+name: AngularCI
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Chequear el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Configurar Node.js (la versión depende de la versión de Angular)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Asegúrate de usar una versión compatible con Angular 18
+
+      # Step 3: Instalar dependencias
+      - name: Install dependencies
+        run: |
+          npm install -g @angular/cli  # Instalar Angular CLI globalmente
+          npm install  # Instalar dependencias locales del proyecto
+
+      # Step 4: Instalar Tailwind CSS (si no lo tienes en tu package.json)
+      - name: Install Tailwind CSS
+        run: |
+          npm install tailwindcss@3.4.13 postcss autoprefixer  # Instalar Tailwind y dependencias
+
+      # Step 5: Ejecutar el build de producción
+      - name: Build Angular project
+        run: |
+          ng build --prod  # Compilar el proyecto en modo producción
+
+      # Step 6: Ejecutar pruebas (si tienes pruebas configuradas)
+      - name: Run tests
+        run: |
+          ng test --watch=false --browsers=ChromeHeadlessCI  # Ejecutar pruebas en un entorno headless
+
+      # Step 7: (Opcional) Subir los artefactos de build o cualquier archivo de interés
+      - name: Upload production build as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: dist/  # Cambia esta ruta según tu configuración de salida del build
