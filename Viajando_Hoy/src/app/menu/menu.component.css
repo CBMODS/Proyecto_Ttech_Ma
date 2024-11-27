@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&display=swap');
+
+.parent{
+	position: absolute;
+	height: 99%;
+	width: 99%;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	border: 2px solid black;
+}
+
+.titleBar{
+	position: absolute;
+	width: 99%;
+	height: 18%;
+	background: #B9F5F8;
+	top: 1;
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-top: 1%;
+}
+
+.titulo{
+	position: absolute;
+	left: 50%;
+	margin-top: 1px;
+	font-size: 3rem;
+	font-family: Edu AU VIC WA NT Arrows, cursive;
+	transform: translateX(-50%);
+}
+
+nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+	margin-top: 20%;
+    margin-right: 10px;
+}
