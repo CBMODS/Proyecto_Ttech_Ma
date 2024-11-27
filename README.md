@@ -1,6 +1,7 @@
 # Proyecto Angular + Tailwind CSS
 
-<img src="https://angular.io/assets/images/logos/angular/angular.svg" width="90" height="90" /> ![Tailwind CSS Logo](https://your-image-hosting-link.com/path-to-tailwind-logo.png)
+<img src="https://angular.io/assets/images/logos/angular/angular.svg" width="90" height="90" />
+<img src="https://github.com/aniftyco/awesome-tailwindcss/raw/master/assets/logo.svg" />
 
 
 
