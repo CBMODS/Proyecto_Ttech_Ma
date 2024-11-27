@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/blog_page",
+    "/destiny_page",
+    "/faq_page",
+    "/home_page",
+    "/map_page",
+    "/slide_page"
+  ]
+}
