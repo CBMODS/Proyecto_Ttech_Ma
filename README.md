@@ -31,4 +31,5 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 1. **Clona el repositorio**:
 
    ```bash
-   git clone https://github.com/CBMODS/Proyecto_Ttech_Ma.git
+   git clone https://github.com/tuusuario/proyecto-angular-tailwind.git
+   cd proyecto-angular-tailwind
