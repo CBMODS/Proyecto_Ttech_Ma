@@ -1,0 +1,59 @@
+# Este flujo de trabajo hará una instalación limpia de las dependencias de Node, las cacheará/restaurará, construirá el código fuente y ejecutará pruebas en diferentes versiones de Node
+# Para más información, consulta: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # Consulta el calendario de versiones soportadas de Node.js en https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v4  # Checkout del código
+      - name: Use Node.js ${{ matrix.node-version }}  # Usar la versión de Node.js según la matriz
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - run: npm ci  # Instalar dependencias con npm ci
+      - run: npm run build --if-present  # Construir el proyecto (si hay un script de build)
+      - run: npm test  # Ejecutar pruebas
+
+      # Instalar Angular CLI y las dependencias locales
+      - name: Install Angular CLI and local dependencies
+        run: |
+          npm install -g @angular/cli  # Instalar Angular CLI globalmente
+          npm install  # Instalar las dependencias locales
+
+      # Instalar Tailwind CSS (si no está en package.json)
+      - name: Install Tailwind CSS
+        run: |
+          npm install tailwindcss@3.4.13 postcss autoprefixer  # Instalar Tailwind CSS y dependencias
+
+      # Compilar el proyecto Angular en modo producción
+      - name: Build Angular project
+        run: |
+          ng build --prod  # Compilar el proyecto en modo producción
+
+      # Ejecutar pruebas de Angular (si están configuradas)
+      - name: Run tests
+        run: |
+          ng test --watch=false --browsers=ChromeHeadlessCI  # Ejecutar pruebas en un entorno headless
+
+      # Subir el build de producción como artefacto (opcional)
+      - name: Upload production build as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: dist/  # Cambia esta ruta si es necesario según tu configuración de salida del build
