@@ -5,9 +5,11 @@ import { FaqComponent } from './app/faq/faq.component';
 import { BlogComponent } from './app/blog/blog.component';
 import { DestinyComponent } from './app/destiny/destiny.component';
 import { SlideComponent } from './app/slide/slide.component';
+import { AccountManagerComponent } from './app/account-manager/account-manager.component';
 
 export const routes: Routes = [
   
+  { path: 'account-manager_page', component: AccountManagerComponent},
   { path: 'map_page', component: MapComponent },
   { path: 'home_page', component: HomeComponent },
   { path: 'faq_page', component: FaqComponent},

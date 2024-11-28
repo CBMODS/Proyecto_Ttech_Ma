@@ -1,0 +1,73 @@
+<head>
+
+</head>
+
+<main class="w-screen h-screen flex relative">
+  <div class="w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 flex justify-center">
+    <div class="rounded-2xl w-[80%] h-[80%] absolute top-20">
+      <div class="z-20 rounded-2xl w-full h-full absolute left-0 flex flex-col bg-white">
+
+        <!-- Formulario de registro -->
+        <form class="space-y-4 w-1/4 h-1/2 absolute flex flex-col justify-center right-0 top-36 mr-44 z-20">
+          <h1 class="font-onest text-3xl flex justify-center">Unete a nosotros</h1>
+
+          <div>
+            <span class="ml-4">Nombre</span>
+            <input type="text" class="border border-black w-full p-3 rounded-lg h-12">
+          </div>
+
+          <div>
+            <span class="ml-4">Correo</span>
+            <input type="email" class="border border-black w-full p-3 rounded-lg h-12">
+          </div>
+
+          <div>
+            <span class="ml-4">Contraseña</span>
+            <input type="password" class="border border-black w-full p-3 rounded-lg h-12">
+          </div>
+
+          <div>
+            <button type="submit" class="w-full h-12 bg-[#6554ff] text-white rounded-lg hover:bg-[#6554ff99]">
+              Registrarme
+            </button>
+          </div>
+        </form>
+
+        <!-- Formulario de inicio de sesión -->
+        <form class="space-y-4 w-1/4 h-1/2 absolute flex flex-col justify-center left-0 top-36 ml-44 z-20">
+          <h1 class="font-onest font-normal text-3xl flex justify-center">Bienvenido</h1>
+
+          <div>
+            <span class="ml-4">Correo</span>
+            <input type="email" class="border border-black w-full p-3 rounded-lg h-12">
+          </div>
+
+          <div>
+            <span class="ml-4">Contraseña</span>
+            <input type="password" class="border border-black w-full p-3 rounded-lg h-12">
+          </div>
+
+          <div>
+            <button type="submit" class="w-full h-12 bg-[#6554ff] text-white rounded-lg hover:bg-[#6554ff99]">
+              Iniciar Sesion
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- Layout que cambia de posición y texto -->
+      <div #t_layout class="z-30 w-1/2 h-full bg-[#65ff] absolute right-0 rounded-tl-[30%] rounded-bl-[30%] rounded-tr-2xl rounded-br-2xl">
+        <div class="w-full h-full flex flex-col justify-center">
+          <h1 #mjs class="ml-36 font-onest text-3xl">No tienes cuenta <br> puedes unirte a nosotros</h1>
+
+          <!-- Botón que dispara el evento -->
+          <button ng-click="alertM()" type="button" class="z-30 w-1/4 h-12 bg-[#6554ff] text-black mt-4 ml-56 rounded-lg bg-[#ffffff4d]">
+  Crear Cuenta
+</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
