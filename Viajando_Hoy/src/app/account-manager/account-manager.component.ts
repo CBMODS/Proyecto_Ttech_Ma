@@ -13,9 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./account-manager.component.css']
 })
 export class AccountManagerComponent {
-
-  alertM(){
-    alert("hola");
+  miFuncion() {
+    console.log('¡Botón clickeado!');
   }
-
 }

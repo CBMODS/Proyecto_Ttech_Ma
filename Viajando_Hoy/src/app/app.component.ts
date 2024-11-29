@@ -1,18 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
-import { MenuComponent } from './menu/menu.component';
-
-
-/*
-import { MapComponent } from './map/map.component';
-import { HomeComponent } from './home/home.component';
-*/
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Asegura que es un componente standalone
-  imports: [MenuComponent, RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, CommonModule], // Reemplaza BrowserModule con CommonModule
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

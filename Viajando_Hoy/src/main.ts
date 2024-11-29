@@ -1,7 +1,12 @@
-// Importaciones necesarias
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { importProvidersFrom } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';  // Asegúrate de importar el archivo de rutas
 import { AppComponent } from './app/app.component';
 
-// Arranca la aplicación
-platformBrowserDynamic().bootstrapModule(AppComponent)
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(RouterModule.forRoot(routes))  // Proporciona las rutas
+  ]
+})
   .catch(err => console.error(err));

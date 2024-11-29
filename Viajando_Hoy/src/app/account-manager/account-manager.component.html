@@ -48,7 +48,7 @@
           </div>
 
           <div>
-            <button type="submit" class="w-full h-12 bg-[#6554ff] text-white rounded-lg hover:bg-[#6554ff99]">
+            <button type="button" (click)="miFuncion()" class="w-full h-12 bg-[#6554ff] text-white rounded-lg hover:bg-[#6554ff99]">
               Iniciar Sesion
             </button>
           </div>
@@ -57,12 +57,12 @@
       </div>
 
       <!-- Layout que cambia de posición y texto -->
-      <div #t_layout class="z-30 w-1/2 h-full bg-[#65ff] absolute right-0 rounded-tl-[30%] rounded-bl-[30%] rounded-tr-2xl rounded-br-2xl">
+      <div #t_layout class="z-30 w-1/2 h-full bg-[#6554ff] absolute right-0 rounded-tl-[30%] rounded-bl-[30%] rounded-tr-2xl rounded-br-2xl">
         <div class="w-full h-full flex flex-col justify-center">
           <h1 #mjs class="ml-36 font-onest text-3xl">No tienes cuenta <br> puedes unirte a nosotros</h1>
 
           <!-- Botón que dispara el evento -->
-          <button ng-click="alertM()" type="button" class="z-30 w-1/4 h-12 bg-[#6554ff] text-black mt-4 ml-56 rounded-lg bg-[#ffffff4d]">
+          <button type="button" (click)="miFuncion()" class="z-30 w-1/4 h-12 bg-[#6554ff] text-black mt-4 ml-56 rounded-lg bg-[#ffffff4d]">
   Crear Cuenta
 </button>
 
