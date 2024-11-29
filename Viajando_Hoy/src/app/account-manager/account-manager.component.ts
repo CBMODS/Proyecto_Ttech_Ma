@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -7,47 +7,55 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     CommonModule,
-    ],
+  ],
   standalone: true,
   templateUrl: './account-manager.component.html',
   styleUrls: ['./account-manager.component.css']
 })
 export class AccountManagerComponent {
-  miFuncion() {
-    console.log('¡Botón clickeado!');
-  }
 
-  // Usamos @ViewChild para obtener las referencias a los elementos
   @ViewChild('t_layout') t_layout!: ElementRef<HTMLElement>;
   @ViewChild('mjs') mjs!: ElementRef<HTMLElement>;
   @ViewChild('btn_anim') btn!: ElementRef<HTMLElement>;
 
+
+
   isRegistering = false;
 
+  constructor(private renderer: Renderer2) {}
+
   toggleLayout() {
-  // Alternar las clases para mover el layout de izquierda a derecha
-  this.t_layout.nativeElement.classList.toggle('left-0');
-  this.btn.nativeElement.classList.toggle('mr-60');
-  
+    // Alternar las clases de posición
+    this.toggleClass(this.t_layout.nativeElement, 'left-0');
+    this.toggleClass(this.btn.nativeElement, 'mr-60');
 
-  // Alternar las clases de bordes
-  this.t_layout.nativeElement.classList.toggle('rounded-tl-[30%]');
-  this.t_layout.nativeElement.classList.toggle('rounded-bl-[30%]');
-  this.t_layout.nativeElement.classList.toggle('rounded-tr-2xl');
-  this.t_layout.nativeElement.classList.toggle('rounded-br-2xl');
+    // Cambiar bordes dependiendo del estado de registro
+    if (this.isRegistering) {
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderTopLeftRadius', '30%');
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderBottomLeftRadius', '30%');
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderTopRightRadius', '1rem');
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderBottomRightRadius', '1rem');
+      this.mjs.nativeElement.innerHTML = 'puedes unirte a nosotros';
+      this.mjs.nativeElement.innerHTML = 'No tienes cuenta <br> puedes unirte a nosotros'; 
+      this.btn.nativeElement.innerHTML = 'Crear Cuenta';
+    } else {
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderTopLeftRadius', '1rem');
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderBottomLeftRadius', '1rem');
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderTopRightRadius', '30%');
+      this.renderer.setStyle(this.t_layout.nativeElement, 'borderBottomRightRadius', '30%');
+      this.mjs.nativeElement.innerHTML = 'Ya tienes cuenta <br> inicia sesión'; 
+      this.btn.nativeElement.innerHTML = 'Inicia Sesion';
+    }
 
-  // Cambiar el contenido del mensaje y el texto del botón
-  if (this.mjs.nativeElement.innerHTML.includes('puedes unirte a nosotros')) {
-    this.mjs.nativeElement.innerHTML = 'Ya tienes cuenta <br> inicia sesión';
-    this.btn.nativeElement.innerHTML = 'Inicia Sesion';
-  } else {
-    this.mjs.nativeElement.innerHTML = 'No tienes cuenta <br> puedes unirte a nosotros';
-    this.btn.nativeElement.innerHTML = 'Crear Cuenta';
+    // Cambiar el estado de isRegistering
+    this.isRegistering = !this.isRegistering;
   }
 
-  // Cambiar el estado de isRegistering
-  this.isRegistering = !this.isRegistering;
+  private toggleClass(element: HTMLElement, className: string) {
+    if (element.classList.contains(className)) {
+      this.renderer.removeClass(element, className);
+    } else {
+      this.renderer.addClass(element, className);
+    }
+  }
 }
-
-}
-
