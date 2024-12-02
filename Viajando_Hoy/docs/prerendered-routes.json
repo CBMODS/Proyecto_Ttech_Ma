@@ -1,0 +1,11 @@
+{
+  "routes": [
+    "/account",
+    "/blog",
+    "/content",
+    "/destiny",
+    "/faq",
+    "/home",
+    "/map"
+  ]
+}
