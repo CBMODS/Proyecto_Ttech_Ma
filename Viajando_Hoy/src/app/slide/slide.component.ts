@@ -5,6 +5,7 @@ import { HomeComponent } from '../home/home.component';
 import { FaqComponent } from '../faq/faq.component';
 import { BlogComponent } from '../blog/blog.component';
 import { DestinyComponent } from '../destiny/destiny.component';
+import { ContentComponent } from '../content/content.component';
 
 @Component({
   selector: 'app-slide',
@@ -14,6 +15,7 @@ import { DestinyComponent } from '../destiny/destiny.component';
     MapComponent,
     FaqComponent,
     BlogComponent,
+    ContentComponent,
   ],
   templateUrl: './slide.component.html',
   styleUrl: './slide.component.css'
