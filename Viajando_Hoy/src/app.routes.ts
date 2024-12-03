@@ -7,9 +7,10 @@ import { DestinyComponent } from './app/destiny/destiny.component';
 import { SlideComponent } from './app/slide/slide.component';
 import { AccountManagerComponent } from './app/account-manager/account-manager.component';
 import { ContentComponent } from './app/content/content.component';
+import { PanelUserComponent } from './app//panel-user/panel-user.component';
 
 export const routes: Routes = [
-  
+  { path: 'user', component: PanelUserComponent},
   { path: 'account', component: AccountManagerComponent},
   { path: 'map', component: MapComponent },
   { path: 'faq', component: FaqComponent},

@@ -1,0 +1,12 @@
+/* Estilos adicionales */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
+}
