@@ -1,1 +1,63 @@
-<p>panel-user works!</p>
+<main class="font-sans bg-gray-100">
+	<!-- Barra lateral -->
+    <div class="flex h-screen">
+        <div class="w-64 bg-blue-900 text-white p-6">
+            <h1 class="text-2xl font-semibold mb-6">Viajando Hoy</h1>
+            <ul>
+                <li class="mb-4"><a href="#" class="hover:text-blue-300">Inicio</a></li>
+                <li class="mb-4"><a href="#" class="hover:text-blue-300">Mi Perfil</a></li>
+                <li class="mb-4"><a href="#" class="hover:text-blue-300">Mis Reservas</a></li>
+                <li class="mb-4"><a href="#" class="hover:text-blue-300">Ofertas Especiales</a></li>
+                <li class="mb-4"><a href="#" class="hover:text-blue-300">Asistencia</a></li>
+                <li class="mb-4"><a href="#" class="hover:text-blue-300">Cerrar sesión</a></li>
+            </ul>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="flex-1 p-8">
+            <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
+                <h2 class="text-3xl font-semibold text-gray-700">Bienvenido, Cristian Berrio</h2>
+                <p class="text-gray-500">Tu panel de usuario de Marketing Turístico</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Estadísticas -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-700">Mis Reservas</h3>
+                    <p class="text-gray-500">Tienes 3 reservas pendientes</p>
+                </div>
+
+                <!-- Ofertas Especiales -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-700">Ofertas Especiales</h3>
+                    <p class="text-gray-500">Aprovecha las ofertas en destinos exclusivos</p>
+                </div>
+
+                <!-- Actividad Reciente -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-700">Actividad Reciente</h3>
+                    <p class="text-gray-500">Última reserva: Viaje a Cancún</p>
+                </div>
+            </div>
+
+            <!-- Información del Perfil -->
+            <div class="bg-white shadow-lg rounded-lg p-6 mt-6">
+                <h3 class="text-xl font-semibold text-gray-700">Mi Perfil</h3>
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label for="nombre" class="block text-gray-600">Nombre</label>
+                        <input type="text" id="nombre" value="Juan Pérez" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-600">Correo Electrónico</label>
+                        <input type="email" id="email" value="juan.perez@email.com" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
+                    </div>
+                    <div>
+                        <label for="telefono" class="block text-gray-600">Teléfono</label>
+                        <input type="text" id="telefono" value="+1 234 567 890" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

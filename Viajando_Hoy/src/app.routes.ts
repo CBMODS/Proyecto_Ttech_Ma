@@ -7,7 +7,8 @@ import { DestinyComponent } from './app/destiny/destiny.component';
 import { SlideComponent } from './app/slide/slide.component';
 import { AccountManagerComponent } from './app/account-manager/account-manager.component';
 import { ContentComponent } from './app/content/content.component';
-import { PanelUserComponent } from './app//panel-user/panel-user.component';
+import { PanelUserComponent } from './app/panel-user/panel-user.component';
+import { EventsComponent } from './app/events/events.component';
 
 export const routes: Routes = [
   { path: 'user', component: PanelUserComponent},
@@ -15,8 +16,8 @@ export const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'faq', component: FaqComponent},
   { path: 'blog', component: BlogComponent},
-  { path: 'destiny', component: DestinyComponent},
   { path: 'content', component: ContentComponent},
   { path: 'home', component: SlideComponent},
+  { path: 'events', component: EventsComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
