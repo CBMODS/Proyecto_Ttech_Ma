@@ -1,10 +1,14 @@
-<main class="w-screen h-screen relative flex">
-    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+<main class="w-screen h-screen relative flex bg-black">
+    <div class="w-full h-14 bg-gray-50 dark:bg-gray-900">
+        <app-menu/>
+    </div>
+    <div class=" w-fit h-full absolute mt-14 flex left-0">
+        <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
         <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
             <!-- Start coding here -->
             <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
-                    <div class="w-full md:w-1/2">
+                    <div class="w-full">
                         <form class="flex items-center">
                             <label for="simple-search" class="sr-only">Search</label>
                             <div class="relative w-full">
@@ -99,4 +103,5 @@
             </div>
         </div>
     </section>
+    </div>
 </main>
