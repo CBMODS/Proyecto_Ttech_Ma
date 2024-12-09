@@ -9,11 +9,25 @@
                 [zoom]="zoom"
                 (mapClick)="moveMap($event)"
                 (mapMousemove)="move($event)">
-    </google-map>
-  <div class="absolute left-0 bottom-0 mb-20 ml-12 w-1/3 h-fit flex flex-col  border border-white">
+  </google-map>
+
+  <div class="absolute left-0 bottom-0 mb-20 ml-12 w-1/3 h-fit flex flex-col border border-white">
     <div class="text-white px-2">Latitude: {{display?.lat}}</div>
     <div class="text-white px-2">Longitude: {{display?.lng}}</div>
   </div>
-  <div></div>
+
+  <!-- Lista animada de lugares -->
+  <div class="w-1/2 h-1/2 absolute top-20 right-0 mr-10 mt-24 p-4 bg-gray-800 text-white rounded-lg overflow-hidden">
+    <h2 class="text-2xl font-semibold text-center mb-4">Lugares para visitar en Sincelejo y Montería</h2>
+    <ul class="space-y-4">
+      <li class="animate__animated animate__fadeIn animate__delay-1s">Parque de la Vida (Sincelejo)</li>
+      <li class="animate__animated animate__fadeIn animate__delay-2s">Catedral de San Francisco (Sincelejo)</li>
+      <li class="animate__animated animate__fadeIn animate__delay-3s">Puente Pumarejo (Montería)</li>
+      <li class="animate__animated animate__fadeIn animate__delay-4s">Parque Ronda del Sinú (Montería)</li>
+      <li class="animate__animated animate__fadeIn animate__delay-5s">Museo Zenu (Montería)</li>
+      <li class="animate__animated animate__fadeIn animate__delay-6s">Centro Histórico (Sincelejo)</li>
+      <li class="animate__animated animate__fadeIn animate__delay-7s">Parque Los Fundadores (Montería)</li>
+    </ul>
+  </div>
   
 </main>
