@@ -8,6 +8,7 @@ Este es un proyecto de ejemplo que utiliza **Angular 18** como framework de desa
 
 - [Angular 18](https://angular.io/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Google Maps](https://www.google.com/intl/es-419/maps/about/mymaps/)
 
 ## Características
 
