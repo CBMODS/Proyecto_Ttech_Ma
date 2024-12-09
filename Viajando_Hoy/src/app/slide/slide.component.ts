@@ -4,7 +4,6 @@ import { MapComponent } from '../map/map.component';
 import { HomeComponent } from '../home/home.component';
 import { FaqComponent } from '../faq/faq.component';
 import { BlogComponent } from '../blog/blog.component';
-import { DestinyComponent } from '../destiny/destiny.component';
 import { ContentComponent } from '../content/content.component';
 import { FooterComponent } from '../footer/footer.component';
 
