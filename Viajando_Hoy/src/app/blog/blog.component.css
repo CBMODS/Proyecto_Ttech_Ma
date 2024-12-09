@@ -1,0 +1,9 @@
+/* Ocultar las barras de desplazamiento */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Oculta el scroll en navegadores WebKit (Chrome, Safari, etc.) */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Oculta el scroll en Internet Explorer */
+  scrollbar-width: none;     /* Oculta el scroll en Firefox */
+}
