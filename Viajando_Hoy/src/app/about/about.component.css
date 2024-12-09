@@ -1,0 +1,35 @@
+/* Estilos para ocultar el scrollbar pero mantener el scroll funcional */
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  /* Asegurarse de que el body ocupe toda la altura */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Asegurarse que el contenedor principal ocupe toda la pantalla */
+  .container {
+    height: 100%;
+  }
+
+  /* Asegurarse de que la sección ocupe toda la altura disponible */
+  .about-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Esto asegura que haya espacio entre el título y el contenido */
+  }
+
+  /* Asegurarse de que el contenedor del contenido tenga el espacio máximo posible */
+  .about-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Habilitar scroll solo cuando el contenido se desborde */
+  }
