@@ -1,3 +1,74 @@
-<main class="w-screen h-screen resize">
-	<div class="w-full h-full bg-blue-500"></div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+<main class="w-screen h-screen bg-gray-900 text-white flex flex-col items-center py-10 overflow-y-auto scrollbar-hidden">
+	<div class="w-full h-14"><app-menu/></div>
+  <!-- Título del FAQ -->
+  <div class="w-full text-center mb-12 mt-12">
+    <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Preguntas Frecuentes - Viajando Hoy</h1>
+    <p class="text-lg mt-4">Aquí encontrarás las respuestas a las preguntas más comunes sobre nuestros servicios turísticos en Sincelejo y Montería.</p>
+  </div>
+
+  <!-- Sección de FAQ -->
+  <div class="w-full max-w-4xl space-y-6">
+    <!-- Pregunta 1 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn">
+      <div #faqQuestion class="text-2xl font-semibold text-pink-400">
+        ¿Qué servicios ofrece "Viajando Hoy" en Sincelejo y Montería?
+      </div>
+      <div class="faq-answer text-lg text-gray-400 mt-4">
+        "Ofrecemos tours guiados, recomendaciones de restaurantes, actividades culturales y de aventura, transporte y paquetes turísticos personalizados para disfrutar de las ciudades de Sincelejo y Montería."
+      </div>
+    </div>
+
+    <!-- Pregunta 2 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn animate__delay-1s">
+      <div #faqQuestion class="text-2xl font-semibold text-pink-400">
+        ¿Cómo puedo reservar un tour?
+      </div>
+      <div class="faq-answer text-lg text-gray-400 mt-4">
+        "Puedes reservar tu tour directamente en nuestra página web. Simplemente selecciona el destino y el paquete que más te interese, y completa el formulario de reserva. También puedes llamarnos para obtener más información."
+      </div>
+    </div>
+
+    <!-- Pregunta 3 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn animate__delay-2s">
+      <div #faqQuestion class="text-2xl font-semibold text-pink-400">
+        ¿Es seguro viajar con "Viajando Hoy"?
+      </div>
+      <div class="faq-answer text-lg text-gray-400 mt-4">
+        "Sí, trabajamos con guías locales profesionales y seguimos todas las normativas de seguridad para asegurar que tengas una experiencia segura y agradable. Además, ofrecemos seguro de viaje durante las excursiones."
+      </div>
+    </div>
+
+    <!-- Pregunta 4 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn animate__delay-3s">
+      <div #faqQuestion class="text-2xl font-semibold text-pink-400">
+        ¿Puedo personalizar mi paquete turístico?
+      </div>
+      <div class="faq-answer text-lg text-gray-400 mt-4">
+        "Sí, todos nuestros paquetes turísticos son personalizables. Si tienes alguna preferencia o necesidades específicas, no dudes en contactar con nosotros para diseñar el tour perfecto para ti."
+      </div>
+    </div>
+
+    <!-- Pregunta 5 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn animate__delay-4s">
+      <div #faqQuestion class="text-2xl font-semibold text-pink-400">
+        ¿Cuáles son los métodos de pago disponibles?
+      </div>
+      <div class="faq-answer text-lg text-gray-400 mt-4">
+        "Aceptamos pagos a través de tarjetas de crédito y débito, transferencias bancarias, y pagos en efectivo en nuestros puntos de atención. También ofrecemos opciones de pago en línea para tu comodidad."
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario de Comentarios -->
+  <div class="mt-16 w-full max-w-4xl p-6 bg-gray-800 rounded-lg shadow-xl animate__animated animate__fadeIn animate__delay-5s">
+    <h2 class="text-3xl font-semibold text-center text-pink-400 mb-6">¿Tienes más preguntas? ¡Contáctanos!</h2>
+    <form class="space-y-4">
+      <textarea class="w-full p-4 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="Escribe tu pregunta..." rows="4"></textarea>
+      <div class="flex justify-center">
+        <button type="submit" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-6 rounded-full hover:bg-gradient-to-l transition-all duration-300">Enviar Pregunta</button>
+      </div>
+    </form>
+  </div>
 </main>
