@@ -1,6 +1,10 @@
 # Proyecto Angular + Tailwind CSS
 
-<img src="https://angular.io/assets/images/logos/angular/angular.svg" width="90" height="90" /> <img src="https://github.com/aniftyco/awesome-tailwindcss/raw/master/assets/logo.svg" width="90" height="90" />
+<img src="https://angular.io/assets/images/logos/angular/angular.svg" width="90" height="90" /> <img src="https://github.com/aniftyco/awesome-tailwindcss/raw/master/assets/logo.svg" width="90" height="90" />  <img width="90" height="90"
+      src="https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=13&size=600x300&maptype=roadmap&key=AIzaSyA04BfR3nh8FdP-1LgbhFphflv7k5EfKY8" 
+      alt="Mapa de Google" 
+      class="w-full h-full object-cover rounded-lg"
+    />
 
 Este es un proyecto de ejemplo que utiliza **Angular 18** como framework de desarrollo y **Tailwind CSS** como herramienta de diseño. Este proyecto demuestra cómo integrar ambos en un entorno de desarrollo moderno y eficiente.
 
