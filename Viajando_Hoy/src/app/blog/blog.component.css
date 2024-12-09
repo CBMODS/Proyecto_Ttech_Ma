@@ -1,0 +1,23 @@
+/* Ocultar la barra de desplazamiento pero mantener el desplazamiento funcional */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Para Firefox */
+  html {
+    scrollbar-width: none; /* Oculta el scrollbar en Firefox */
+  }
+
+  /* Para otros navegadores (si es necesario) */
+  body {
+    overflow-y: scroll; /* Habilita el scroll pero sin mostrar la barra */
+  }

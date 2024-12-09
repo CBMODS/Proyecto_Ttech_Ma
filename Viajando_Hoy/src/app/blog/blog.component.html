@@ -1,1 +1,73 @@
-<p>blog works!</p>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+<main class="w-screen h-screen bg-gray-900 text-white flex flex-col items-center py-10 overflow-y-auto">
+	<div class="absolute top-0 w-full h-14">
+		<app-menu/>
+	</div>
+  <!-- Título del Blog -->
+  <div class="w-full text-center mb-12 mt-24">
+    <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Blog de Experiencias y Comentarios de Clientes</h1>
+    <p class="text-lg mt-4">Lee las experiencias de nuestros clientes y comparte la tuya</p>
+  </div>
+
+  <!-- Entradas de Blog -->
+  <div class="w-full max-w-4xl space-y-10">
+    <!-- Entrada 1 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn">
+      <h2 class="text-3xl font-semibold mb-4 text-pink-400">Mi experiencia en Montería</h2>
+      <p class="text-lg mb-4">
+        "Montería es un lugar lleno de historia y belleza natural. Visitar el Parque Ronda del Sinú fue increíble, y las vistas del río me dejaron sin aliento. Definitivamente un lugar para volver."
+      </p>
+      <p class="text-sm text-gray-400">Escrito por: Juan Pérez | 8 de diciembre, 2024</p>
+    </div>
+
+    <!-- Entrada 2 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn animate__delay-1s">
+      <h2 class="text-3xl font-semibold mb-4 text-pink-400">El encanto de Sincelejo</h2>
+      <p class="text-lg mb-4">
+        "La gente en Sincelejo es muy cálida y acogedora. El Centro Histórico me permitió conocer más sobre la cultura de Sucre. Un lugar lleno de tradición y color."
+      </p>
+      <p class="text-sm text-gray-400">Escrito por: Maria Gómez | 6 de diciembre, 2024</p>
+    </div>
+
+    <!-- Entrada 3 -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeIn animate__delay-2s">
+      <h2 class="text-3xl font-semibold mb-4 text-pink-400">La magia del Parque Los Fundadores</h2>
+      <p class="text-lg mb-4">
+        "El Parque Los Fundadores es un excelente lugar para relajarse y disfrutar de la naturaleza. Las actividades recreativas disponibles son perfectas para toda la familia."
+      </p>
+      <p class="text-sm text-gray-400">Escrito por: Carlos Martínez | 2 de diciembre, 2024</p>
+    </div>
+  </div>
+
+  <!-- Sección de Comentarios -->
+  <div class="mt-16 w-full max-w-4xl p-6 bg-gray-800 rounded-lg shadow-xl animate__animated animate__fadeIn animate__delay-3s">
+    <h2 class="text-3xl font-semibold text-center text-pink-400 mb-6">Comentarios de Nuestros Clientes</h2>
+
+    <!-- Comentarios de Clientes -->
+    <div class="space-y-6">
+      <div class="bg-gray-700 p-4 rounded-lg">
+        <p class="text-lg mb-2">"El servicio fue excelente y las recomendaciones fueron precisas. Gracias por hacer que mi viaje sea inolvidable." - Ana Rodríguez</p>
+      </div>
+
+      <div class="bg-gray-700 p-4 rounded-lg">
+        <p class="text-lg mb-2">"Tuve la oportunidad de explorar Montería de una manera única. ¡Volveré seguro!" - Luis Fernández</p>
+      </div>
+
+      <div class="bg-gray-700 p-4 rounded-lg">
+        <p class="text-lg mb-2">"La ciudad de Sincelejo tiene un encanto especial. Estoy muy feliz con la experiencia que viví." - Carmen López</p>
+      </div>
+    </div>
+
+    <!-- Formulario de Comentarios -->
+    <div class="mt-8">
+      <h3 class="text-2xl font-semibold text-center text-pink-400 mb-4">Déjanos tu Comentario</h3>
+      <form class="space-y-4">
+        <textarea class="w-full p-4 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="Escribe tu comentario..." rows="4"></textarea>
+        <div class="flex justify-center">
+          <button type="submit" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-6 rounded-full hover:bg-gradient-to-l transition-all duration-300">Enviar Comentario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
