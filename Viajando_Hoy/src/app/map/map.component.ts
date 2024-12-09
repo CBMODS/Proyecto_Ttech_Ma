@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps'
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-map',
@@ -8,6 +9,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
   imports: [
     CommonModule,
     GoogleMapsModule,
+    MenuComponent,
     ],
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css'],
@@ -20,8 +22,8 @@ export class MapComponent {
     
     display: any;
     center: google.maps.LatLngLiteral = {
-        lat: 22.2736308,
-        lng: 70.7512555
+        lat: 9.30472,
+        lng: -75.39778
     };
     zoom = 6;
     

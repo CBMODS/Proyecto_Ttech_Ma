@@ -1,16 +1,19 @@
-<main class="w-screen h-screen">
-	<h1>How to Integrate Google Maps in Angular 18 - ItSolutionStuff.com</h1>
-  
-<google-map height="500px"
-            width="900px"
-            [center]="center"
-            [zoom]="zoom"
-            (mapClick)="moveMap($event)"
-            (mapMousemove)="move($event)">
-</google-map>
-  
-<div>Latitude: {{display?.lat}}</div>
-<div>Longitude: {{display?.lng}}</div>
+<main class="w-screen h-screen bg-gray-900 overflow-hidden flex flex-col lg:flex-row">
+  <!-- Barra de menú superior -->
+  <div class="w-full h-14 absolute top-0 bg-gradient-to-r from-purple-500 to-pink-500 p-4 shadow-md">
+    <app-menu />
+  </div>
 
-
+  <google-map class="absolute left-0 mt-24 ml-10 w-1/2 h-1/2"
+                [center]="center"
+                [zoom]="zoom"
+                (mapClick)="moveMap($event)"
+                (mapMousemove)="move($event)">
+    </google-map>
+  <div class="absolute left-0 bottom-0 mb-20 ml-12 w-1/3 h-fit flex flex-col  border border-white">
+    <div class="text-white px-2">Latitude: {{display?.lat}}</div>
+    <div class="text-white px-2">Longitude: {{display?.lng}}</div>
+  </div>
+  <div></div>
+  
 </main>
