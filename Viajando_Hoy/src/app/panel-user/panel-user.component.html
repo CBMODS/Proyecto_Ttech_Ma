@@ -1,9 +1,9 @@
 <main class="font-sans bg-gray-100">
-	<!-- Barra lateral -->
+    <!-- Barra lateral -->
     <div class="w-full h-14 bg-blue-900">
-        <app-menu/>
+        <app-menu />
     </div>
-    <div class="flex h-screen">
+    <div class="flex h-screen overflow-hidden">
         <div class="w-64 bg-blue-900 text-white p-6">
             <h1 class="text-2xl font-semibold mb-6">Viajando Hoy</h1>
             <ul>
@@ -17,9 +17,9 @@
         </div>
 
         <!-- Contenido Principal -->
-        <div class="flex-1 p-8">
+        <div class="flex-1 p-8 overflow-y-auto">
             <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
-                <h2 class="text-3xl font-semibold text-gray-700">Bienvenido, Cristian Berrio</h2>
+                <h2 class="text-3xl font-semibold text-gray-700">Bienvenido, {{ usuario.nombre_usuario }}</h2>
                 <p class="text-gray-500">Tu panel de usuario de Marketing Turístico</p>
             </div>
 
@@ -46,20 +46,46 @@
             <!-- Información del Perfil -->
             <div class="bg-white shadow-lg rounded-lg p-6 mt-6">
                 <h3 class="text-xl font-semibold text-gray-700">Mi Perfil</h3>
-                <form action="#" method="POST" class="space-y-4">
+                <div class="space-y-4">
                     <div>
-                        <label for="nombre" class="block text-gray-600">Nombre</label>
-                        <input type="text" id="nombre" value="Juan Pérez" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
+                        <label class="block text-gray-600">Nombre de Usuario</label>
+                        <p class="text-gray-800">{{ usuario.nombre_usuario }}</p>
                     </div>
                     <div>
-                        <label for="email" class="block text-gray-600">Correo Electrónico</label>
-                        <input type="email" id="email" value="juan.perez@email.com" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
+                        <label class="block text-gray-600">Nombre</label>
+                        <p class="text-gray-800">{{ usuario.nombre_1 }} {{ usuario.nombre_2 }}</p>
                     </div>
                     <div>
-                        <label for="telefono" class="block text-gray-600">Teléfono</label>
-                        <input type="text" id="telefono" value="+1 234 567 890" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
+                        <label class="block text-gray-600">Apellidos</label>
+                        <p class="text-gray-800">{{ usuario.apellido_1 }} {{ usuario.apellido_2 }}</p>
                     </div>
-                </form>
+                    <div>
+                        <label class="block text-gray-600">Correo Electrónico</label>
+                        <p class="text-gray-800">{{ usuario.correo }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Fecha de Registro</label>
+                        <p class="text-gray-800">{{ usuario.fecha_registro | date:'medium' }}</p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Rol</label>
+                        <p class="text-gray-800">{{ rolUsuario }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subir Imagen de Perfil -->
+            <div class="bg-white shadow-lg rounded-lg p-6 mt-6">
+                <h3 class="text-xl font-semibold text-gray-700">Foto de Perfil</h3>
+                <div class="flex items-center">
+                    <img *ngIf="fotoPerfilUrl" [src]="fotoPerfilUrl" alt="Foto de perfil"
+                        class="w-20 h-20 rounded-full mr-4">
+                    <form (ngSubmit)="onFotoPerfilChange($event)" enctype="multipart/form-data" class="space-y-4">
+                        <input type="file" id="fotoPerfil" (change)="onFotoPerfilChange($event)"
+                            class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="bg-blue-900 text-white p-3 rounded-lg">Subir Foto</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -1,14 +1,23 @@
+<<<<<<< HEAD
 import { Component, ElementRef, Renderer2, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 import { CommonModule } from '@angular/common';
+=======
+import { Component } from '@angular/core';
+import { MenuComponent } from '../menu/menu.component';
+>>>>>>> huber
 
 @Component({
   selector: 'app-faq',
   standalone: true,
+<<<<<<< HEAD
   imports: [
     MenuComponent,
     CommonModule,
   ],
+=======
+  imports: [MenuComponent,],
+>>>>>>> huber
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.css']
 })

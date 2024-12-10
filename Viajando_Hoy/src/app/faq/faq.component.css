@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Estilo para ocultar las respuestas inicialmente */
   .faq-answer {
     display: none;
@@ -32,3 +33,18 @@ main {
   .scrollbar-hidden::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
   }
+=======
+/* Ocultar las barras de desplazamiento pero mantener el desplazamiento */
+.scrollbar-hidden {
+  overflow-y: scroll; /* Asegura que el contenido sea desplazable */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Oculta la barra de desplazamiento en navegadores basados en Webkit (Chrome, Safari) */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Oculta la barra de desplazamiento en IE y Edge */
+  scrollbar-width: none;  /* Oculta la barra de desplazamiento en Firefox */
+}
+>>>>>>> huber

@@ -1,12 +1,16 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { importProvidersFrom } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { routes } from './app.routes';  // Asegúrate de importar el archivo de rutas
+import { provideRouter } from '@angular/router';
 import { AppComponent } from './app/app.component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { routes } from '../src/app.routes';
+import { CoreModule } from './app/core/core.module';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(RouterModule.forRoot(routes))  // Proporciona las rutas
+    provideHttpClient(withInterceptorsFromDi()),
+    ReactiveFormsModule,
+    provideRouter(routes),
+    CoreModule
   ]
-})
-  .catch(err => console.error(err));
+});

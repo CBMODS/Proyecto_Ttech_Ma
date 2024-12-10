@@ -1,0 +1,35 @@
+.container-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-group label {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.labelInfo {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.container-group-user {
+    display: grid;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.container-group-user label {
+    margin-bottom: 5px;
+    text-align: center;
+
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Ocultar la barra de desplazamiento pero mantener el desplazamiento funcional */
   ::-webkit-scrollbar {
     width: 0px;
@@ -21,3 +22,14 @@
   body {
     overflow-y: scroll; /* Habilita el scroll pero sin mostrar la barra */
   }
+=======
+/* Ocultar las barras de desplazamiento */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Oculta el scroll en navegadores WebKit (Chrome, Safari, etc.) */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Oculta el scroll en Internet Explorer */
+  scrollbar-width: none;     /* Oculta el scroll en Firefox */
+}
+>>>>>>> huber

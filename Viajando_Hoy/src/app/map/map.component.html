@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
 <main class="w-screen h-screen bg-gray-900 overflow-hidden flex flex-col lg:flex-row">
@@ -32,4 +33,45 @@
     </ul>
   </div>
   
+=======
+<main class="w-screen h-screen bg-gradient-to-r from-gray-800 to-gray-900">
+  <!-- Barra de menú -->
+  <div class="w-full h-16 bg-gray-800 dark:bg-gray-900 shadow-lg">
+    <app-menu/>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="mt-12 relative flex flex-col lg:flex-row items-start justify-center p-8 space-y-8 lg:space-y-0 lg:space-x-8 bg-gray-900 rounded-lg shadow-2xl transform transition-all duration-300 ease-in-out max-w-6xl mx-auto">
+    <!-- Mapa de Google centrado a la izquierda -->
+    <google-map 
+      class="h-1/2 w-1/2"
+      [center]="center" 
+      [zoom]="zoom" 
+      (mapClick)="moveMap($event)">
+    </google-map>
+
+    <!-- Lista de lugares para visitar -->
+    <div class="text-white w-1/3 h-1/2 bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-400">Lugares para visitar</h2>
+      
+      <h3 class="text-xl font-semibold text-gray-300 mb-2">En Sincelejo:</h3>
+      <ul class="list-inside list-disc text-gray-200">
+        <li>Parque Padilla</li>
+        <li>Catedral de Sincelejo</li>
+        <li>Centro Histórico de Sincelejo</li>
+        <li>Teatro Municipal de Sincelejo</li>
+        <li>Plaza de Mercado</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-gray-300 mt-6 mb-2">En Montería:</h3>
+      <ul class="list-inside list-disc text-gray-200">
+        <li>Parque Simón Bolívar</li>
+        <li>Puente del Sinú</li>
+        <li>Catedral de Montería</li>
+        <li>Plaza Cultural del Sinú</li>
+        <li>Centro Comercial Alamedas</li>
+      </ul>
+    </div>
+  </div>
+>>>>>>> huber
 </main>

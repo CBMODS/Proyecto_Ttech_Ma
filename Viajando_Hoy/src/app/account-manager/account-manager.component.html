@@ -1,42 +1,106 @@
-<main class="w-screen h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-500">
-  <div class="relative flex flex-col md:flex-row bg-white w-11/12 md:w-3/4 lg:w-2/3 rounded-2xl shadow-lg mt-10 mb-10">
-    
+<!-- account-manager.component.html -->
+<main class="w-screen h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to--500">
+  <div class="relative flex flex-col md:flex-row bg-white w-11/12 md:w-3/4 lg:w-3/3 rounded-2xl shadow-lg mt-10 mb-10">
+
     <!-- Formulario de inicio de sesión -->
-    <form class="flex-1 p-6 md:p-10 space-y-6">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="flex-1 p-6 md:p-10 space-y-6">
       <h1 class="text-3xl font-semibold text-center">Bienvenido</h1>
-      
+
       <div>
-        <label class="block text-sm font-medium">Correo</label>
-        <input type="email" class="border border-gray-300 w-full p-3 rounded-lg" placeholder="Ingresa tu correo">
+        <label class="block text-sm font-medium text-center mb-3">Correo</label>
+        <input type="email" formControlName="correo" class="border border-gray-300 w-full p-3 rounded-lg"
+          placeholder="Ingresa tu correo">
       </div>
 
       <div>
-        <label class="block text-sm font-medium">Contraseña</label>
-        <input type="password" class="border border-gray-300 w-full p-3 rounded-lg" placeholder="Ingresa tu contraseña">
+        <label class="block text-sm font-medium text-center mb-3">Contraseña</label>
+        <input type="password" formControlName="contrasena_hash" class="border border-gray-300 w-full p-3 rounded-lg"
+          placeholder="Ingresa tu contraseña">
       </div>
 
-      <button type="button" class="w-full h-12 bg-purple-500 text-white rounded-lg hover:bg-purple-400">
+      <div *ngIf="loginError" class="text-red-500 text-sm mt-2"> {{ loginError }} </div>
+
+      <button type="submit" class="w-full h-12 bg-purple-500 text-white rounded-lg hover:bg-purple-400">
         Iniciar Sesión
       </button>
     </form>
 
     <!-- Formulario de registro -->
-    <form class="flex-1 p-6 md:p-10 space-y-6 bg-gray-50 rounded-2xl">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()"
+      class="flex-1 p-6 md:p-10 space-y-6 bg-gray-50 rounded-2xl">
       <h1 class="text-3xl font-semibold text-center">Únete a nosotros</h1>
-      
-      <div>
-        <label class="block text-sm font-medium">Nombre</label>
-        <input type="text" class="border border-gray-300 w-full p-3 rounded-lg" placeholder="Ingresa tu nombre">
+
+      <div class="container-group">
+
+
+        <div class="input-group">
+          <label class="block text-sm font-medium" for="nombre_1">Primer Nombre</label>
+          <input type="text" formControlName="nombre_1" class="border border-gray-300 w-full p-3 rounded-lg"
+            id="nombre_1" placeholder="Ingresa tu nombre" required>
+        </div>
+
+        <div class="input-group">
+          <label class="block text-sm font-medium" for="nombre_2">Segundo Nombre</label>
+          <input type="text" formControlName="nombre_2" class="border border-gray-300 w-full p-3 rounded-lg"
+            id="nombre_2" placeholder="Ingresa tu segundo nombre">
+        </div>
+
       </div>
 
-      <div>
-        <label class="block text-sm font-medium">Correo</label>
-        <input type="email" class="border border-gray-300 w-full p-3 rounded-lg" placeholder="Ingresa tu correo">
+      <div class="container-group">
+        <div class="input-group">
+          <label class="block text-sm font-medium" for="apellido_1">Primer Apellido</label>
+          <input type="text" formControlName="apellido_1" class="border border-gray-300 w-full p-3 rounded-lg"
+            id="apellido_1" placeholder="Ingresa tu primer apellido" required>
+        </div>
+
+        <div class="input-group">
+          <label class="block text-sm font-medium" for="apellido_2">Segundo Apellido</label>
+          <input type="text" formControlName="apellido_2" class="border border-gray-300 w-full p-3 rounded-lg"
+            id="apellido_2" placeholder="Ingresa tu segundo apellido">
+        </div>
       </div>
 
-      <div>
-        <label class="block text-sm font-medium">Contraseña</label>
-        <input type="password" class="border border-gray-300 w-full p-3 rounded-lg" placeholder="Crea una contraseña">
+      <div class="container-group-user">
+        <div class="input-group">
+          <label class="block text-sm font-medium" for="nombre_usuario">Nombre de usuario</label>
+          <input type="text" formControlName="nombre_usuario" class="border border-gray-300 w-3/4 p-3 rounded-lg"
+            id="nombre_usuario" placeholder="Ingresa tu nombre de usuario" required>
+        </div>
+
+      </div>
+
+
+
+
+      <div class="">
+        <label class="labelInfo block text-sm font-medium" for="correo">Correo</label>
+        <input type="email" formControlName="correo" class="border border-gray-300 w-full p-3 rounded-lg" id="correo"
+          placeholder="Ingresa tu correo">
+      </div>
+
+      <div class="container-group">
+        <div>
+          <label class="labelInfo block text-sm font-medium" for="contrasena_hash">Contraseña</label>
+          <input type="password" formControlName="contrasena_hash" class="border border-gray-300 w-full p-3 rounded-lg"
+            id="contrasena_hash" placeholder="Crea una contraseña">
+        </div>
+
+        <div>
+          <label class="labelInfo block text-sm font-medium" for="confirmPassword">Confirmar Contraseña</label>
+          <input type="password" formControlName="confirmPassword" class="border border-gray-300 w-full p-3 rounded-lg"
+            id="confirmPassword" placeholder="Repita la contraseña">
+        </div>
+
+        <!-- Mostrar mensaje de error si las contraseñas no coinciden -->
+        <div *ngIf="registerForm.errors?.['mismatch'] && registerForm.touched" class="text-red-500 text-sm mt-2">
+          Las contraseñas no coinciden.
+        </div>
+      </div>
+
+      <!-- Mostrar rol actual -->
+      <div class="">
+        <p class="text-sm font-medium">Rol actual: <span class="text-blue-500">Promotor</span></p>
       </div>
 
       <button type="submit" class="w-full h-12 bg-purple-500 text-white rounded-lg hover:bg-purple-400">
@@ -45,26 +109,17 @@
     </form>
 
     <!-- Layout animado -->
-    <div 
-      #t_layout 
-      class="transition-all duration-300 ease-in-out z-30 w-full md:w-1/2 h-1/2 md:h-full bg-[#6554ff] absolute bottom-6 md:bottom-0 md:right-0 rounded-bl-[30%] rounded-br-2xl rounded-tl-[30%] rounded-tr-2xl flex flex-col items-center justify-center text-center md:text-left"
-    >
+    <div #t_layout
+      class="transition-all duration-300 ease-in-out z-30 w-full md:w-1/2 h-1/2 md:h-full bg-[#6554ff] absolute bottom-6 md:bottom-0 md:right-0 rounded-bl-[10%] rounded-br-2xl rounded-tl-[30%] rounded-tr-2xl flex flex-col items-center justify-center text-center md:text-left">
       <!-- Texto dinámico -->
-      <h1 
-        #mjs 
-        class="text-lg md:text-3xl font-onest text-white px-4 md:ml-30"
-      >
-        No tienes cuenta<br>
+      <h1 #mjs class="text-lg md:text-3xl font-onest text-white px-4 md:ml-30">
+        ¿No tienes cuenta?<br>
         ¡Puedes unirte a nosotros!
       </h1>
 
       <!-- Botón que dispara el evento -->
-      <button 
-        #btn_anim 
-        type="button" 
-        (click)="toggleLayout()" 
-        class="z-30 w-3/4 md:w-1/4 h-12 bg-[#ffffff4d] text-white font-semibold mt-4 md:ml-50 rounded-lg hover:bg-white hover:text-[#6554ff] transition-all duration-300"
-      >
+      <button #btn_anim type="button" (click)="toggleLayout()"
+        class="z-30 w-3/4 md:w-1/4 h-12 bg-[#ffffff4d] text-white font-semibold mt-4 md:ml-50 rounded-lg hover:bg-white hover:text-[#6554ff] transition-all duration-300">
         Crear Cuenta
       </button>
     </div>

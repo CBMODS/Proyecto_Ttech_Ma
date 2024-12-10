@@ -12,6 +12,7 @@ import { AboutComponent } from './app/about/about.component';
 
 export const routes: Routes = [
   { path: 'user', component: PanelUserComponent},
+  { path: 'about', component: AboutComponent},
   { path: 'account', component: AccountManagerComponent},
   { path: 'about', component: AboutComponent},
   { path: 'map', component: MapComponent },
